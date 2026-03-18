@@ -1,0 +1,21 @@
+﻿<div class="page-shell">
+  <header class="hero"><h1>Tasky Control Room</h1><p>Run your full TaskyApi workflow from one screen.</p></header>
+
+  <app-status-banner [success]="store.statusMessage()" [error]="store.errorMessage()" (dismiss)="store.clearMessages()" />
+  <app-task-toolbar [query]="store.query()" (queryChange)="onQueryChange($event)" />
+
+  <section class="board">
+    <div class="left-col">
+      <div class="panel"><h2>Create Task</h2><app-task-form [mode]="'create'" [saving]="store.isSaving()" (submitCreate)="onCreateTask($event)" /></div>
+      <div class="panel">
+        <h2>Tasks</h2>
+        <app-task-list [tasks]="store.tasks()" [loading]="store.isLoadingList()" [selectedId]="store.selectedTask()?.id ?? null" (select)="onSelectTask($event)" (toggle)="onToggle($event)" (remove)="onDelete($event)" />
+        <app-pagination [page]="store.currentPage()" [totalPages]="store.totalPages()" [totalCount]="store.totalCount()" (pageChange)="onPageChange($event)" />
+      </div>
+    </div>
+
+    <div class="right-col">
+      <app-task-detail [task]="store.selectedTask()" [loading]="store.isLoadingDetail()" [saving]="store.isSaving()" (save)="onUpdateTask($event)" (addSubtask)="onCreateSubtask($event)" />
+    </div>
+  </section>
+</div>

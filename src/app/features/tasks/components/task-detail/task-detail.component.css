@@ -1,0 +1,7 @@
+﻿.detail { background: rgba(255, 255, 255, 0.88); border: 1px solid var(--line); border-radius: 16px; padding: 1rem; }
+h2 { margin: 0; }
+.desc { color: var(--muted); }
+.subhead { margin: 1rem 0 0.5rem; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.subtasks ul { list-style: none; padding: 0; margin: 0 0 0.6rem; }
+.subtasks li { display: flex; justify-content: space-between; gap: 0.6rem; padding: 0.35rem 0; border-bottom: 1px dashed var(--line); }
+.subtasks em { color: var(--muted); font-style: normal; }

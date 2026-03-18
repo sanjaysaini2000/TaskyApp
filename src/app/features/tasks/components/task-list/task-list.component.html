@@ -1,0 +1,11 @@
+﻿@if (loading) {
+  <div class="skeleton-grid">@for (n of [1,2,3,4,5,6]; track n) { <div class="skeleton"></div> }</div>
+} @else if (tasks.length === 0) {
+  <section class="empty"><h3>No tasks yet</h3><p>Create your first task or loosen your filters.</p></section>
+} @else {
+  <section class="grid">
+    @for (task of tasks; track task.id) {
+      <app-task-card [task]="task" [selected]="selectedId === task.id" (select)="select.emit($event)" (toggle)="toggle.emit($event)" (remove)="remove.emit($event)" />
+    }
+  </section>
+}

@@ -1,0 +1,28 @@
+﻿<section class="detail">
+  @if (loading) {
+    <p>Loading details...</p>
+  } @else if (!task) {
+    <p>Select a task to view and edit details.</p>
+  } @else {
+    <h2>{{ task.title }}</h2>
+    <p class="desc">{{ task.description || 'No description' }}</p>
+    <p class="subhead">Edit task</p>
+    <app-task-form [mode]="'edit'" [task]="task" [saving]="saving" (submitUpdate)="save.emit($event)" />
+
+    <div class="subtasks">
+      <p class="subhead">Subtasks</p>
+      @if (task.subtasks.length === 0) {
+        <p class="desc">No subtasks yet.</p>
+      } @else {
+        <ul>
+          @for (subtask of task.subtasks; track subtask.id) {
+            <li><span>{{ subtask.title }}</span><em>{{ subtask.isCompleted ? 'Done' : 'Open' }}</em></li>
+          }
+        </ul>
+      }
+
+      <p class="subhead">Add subtask</p>
+      <app-task-form [mode]="'create'" [saving]="saving" (submitCreate)="addSubtask.emit($event)" />
+    </div>
+  }
+</section>

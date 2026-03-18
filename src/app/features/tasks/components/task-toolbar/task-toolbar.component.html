@@ -1,0 +1,10 @@
+﻿<section class="toolbar">
+  <label><span>Search</span><input type="text" [ngModel]="query.search" (ngModelChange)="onSearch($event)" placeholder="Title or description" /></label>
+  <label><span>Status</span><select [ngModel]="query.isCompleted === null ? 'all' : query.isCompleted" (ngModelChange)="onCompleted($event)"><option value="all">All</option><option value="false">Open</option><option value="true">Completed</option></select></label>
+  <label><span>Priority</span><select [ngModel]="query.priority === null ? 'all' : query.priority" (ngModelChange)="onPriority($event)"><option value="all">Any</option><option [value]="0">Low</option><option [value]="1">Medium</option><option [value]="2">High</option></select></label>
+  <label><span>Sort By</span><select [ngModel]="query.sortBy" (ngModelChange)="onSort($event)"><option value="createdAt">Created</option><option value="dueDate">Due Date</option><option value="priority">Priority</option><option value="title">Title</option></select></label>
+  <label><span>Order</span><select [ngModel]="query.order" (ngModelChange)="onOrder($event)"><option value="asc">Ascending</option><option value="desc">Descending</option></select></label>
+  <label><span>Due After</span><input type="date" [ngModel]="query.dueAfter || ''" (ngModelChange)="onDueAfter($event)" /></label>
+  <label><span>Due Before</span><input type="date" [ngModel]="query.dueBefore || ''" (ngModelChange)="onDueBefore($event)" /></label>
+  <button type="button" (click)="clear()">Reset</button>
+</section>

@@ -1,0 +1,29 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --bg-a: #d5e4ff;
+  --bg-b: #ffe5cc;
+  --bg-c: #d8f6e3;
+  --ink: #1a2040;
+  --accent: #3b67ff;
+  --line: #cdd6ea;
+  --muted: #54607d;
+  --ok: #2d8a57;
+  --danger: #b23a4a;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at -20% -15%, var(--bg-a), transparent 70%),
+    radial-gradient(1000px 480px at 110% -10%, var(--bg-b), transparent 70%),
+    radial-gradient(1000px 520px at 50% 120%, var(--bg-c), transparent 70%),
+    linear-gradient(160deg, #f7faff 0%, #eef2fb 100%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3 { font-family: 'Space Grotesk', 'Trebuchet MS', sans-serif; }
+button, input, select, textarea { font-family: inherit; }

@@ -1,0 +1,13 @@
+﻿<article class="card" [class.selected]="selected" [style.--delay]="(task.priority + 1) * 50 + 'ms'">
+  <button class="title-line" type="button" (click)="select.emit(task.id)">
+    <h3>{{ task.title }}</h3>
+    <span class="pill" [class.done]="task.isCompleted">{{ task.isCompleted ? 'Done' : 'Open' }}</span>
+  </button>
+  <p class="meta">{{ priorityLabel(task.priority) }} priority</p>
+  <p class="meta">{{ dueLabel(task.dueDate) }}</p>
+  <div class="actions">
+    <button type="button" class="mini" (click)="toggle.emit({ id: task.id, isCompleted: !task.isCompleted })">{{ task.isCompleted ? 'Mark Open' : 'Mark Done' }}</button>
+    @if (!confirmDelete) { <button type="button" class="mini danger" (click)="confirmDelete = true">Delete</button> }
+    @else { <button type="button" class="mini danger" (click)="remove.emit(task.id)">Confirm Delete</button> }
+  </div>
+</article>

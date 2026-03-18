@@ -1,0 +1,8 @@
+﻿.toolbar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.65rem; background: rgba(255, 255, 255, 0.72); border: 1px solid var(--line); border-radius: 16px; padding: 0.8rem; backdrop-filter: blur(4px); }
+label { display: grid; gap: 0.32rem; }
+label span { font-size: 0.75rem; color: var(--muted); }
+input, select, button { border: 1px solid var(--line); border-radius: 10px; padding: 0.5rem 0.6rem; font: inherit; background: rgba(255, 255, 255, 0.9); }
+button { border: 0; align-self: end; background: var(--ink); color: #fff; cursor: pointer; }
+@media (max-width: 1024px) { .toolbar { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .toolbar { grid-template-columns: 1fr; } }

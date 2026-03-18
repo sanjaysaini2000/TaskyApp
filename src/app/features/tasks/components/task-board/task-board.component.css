@@ -1,0 +1,11 @@
+﻿:host { display: block; }
+.page-shell { width: min(1240px, 100% - 2rem); margin: 1.2rem auto 2rem; animation: reveal-page 0.45s ease both; }
+.hero { margin-bottom: 0.9rem; }
+.hero h1 { margin: 0; font-size: clamp(1.6rem, 2.5vw, 2.4rem); }
+.hero p { margin: 0.3rem 0 0; color: var(--muted); }
+.board { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 1rem; margin-top: 0.8rem; }
+.left-col { display: grid; gap: 0.9rem; }
+.panel { background: rgba(255, 255, 255, 0.58); border: 1px solid var(--line); border-radius: 18px; padding: 0.9rem; backdrop-filter: blur(5px); }
+.panel h2 { margin: 0 0 0.8rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.03em; }
+@keyframes reveal-page { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1024px) { .board { grid-template-columns: 1fr; } }

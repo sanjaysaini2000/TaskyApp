@@ -1,0 +1,16 @@
+﻿@if (success || error) {
+  <section class="status-wrap">
+    @if (success) {
+      <div class="banner ok">
+        <p>{{ success }}</p>
+        <button type="button" (click)="dismiss.emit()">Dismiss</button>
+      </div>
+    }
+    @if (error) {
+      <div class="banner err">
+        <p>{{ error }}</p>
+        <button type="button" (click)="dismiss.emit()">Dismiss</button>
+      </div>
+    }
+  </section>
+}
